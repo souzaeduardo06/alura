@@ -1,5 +1,4 @@
-  <style>
-        header {
+header {
             background-color: #7D26CD;
             color: #FFFFFF;
             text-aling: center;
