@@ -5,24 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de futebol</title>
     <style>
+        :root {
+            --cor-primaria: #7D26CD;
+            --cor-secundaria: #B22222;
+            --cor-fundo: #FFFFFF;
+            --cor-texto: #7D26CD;
+            --cor-contraste: #555555;
+            --cor-botao: #7D26CD;
+            --fonte-texto: 'Segoe UI', sans-serif;
+        }
+
+        .tema-escuro {
+            --cor-primaria: #4B1480;
+            --cor-secundaria: #7A1414;
+            --cor-fundo: #121212;
+            --cor-texto: #D8BFD8;
+            --cor-contraste: #A0A0A0;
+            --cor-botao: #D8BFD8;
+        }
+
+        .tema-escuro a {
+            color: #FF6B6B;
+        }
+
+        .tema-escuro p {
+            color: var(--cor-texto);
+        }
+
+        .tema-escuro header p {
+            color: #E0E0E0;
+        }
+
+        .tema-escuro .artigo-autor {
+            color: var(--cor-texto);
+        }
+
         body {
             max-width: 100vw;
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: var(--fonte-texto);
+            background-color: var(--cor-fundo);
         }
 
         header {
-            background-color: #7D26CD;
+            background-color: var(--cor-primaria);
             color: #FFFFFF;
             text-align: center;
             margin: 0 auto;
             padding: 16px;
-            border: 5px solid #B22222;
+            border: 5px solid var(--cor-secundaria);
         }
 
         main {
-            background-color: #FFFFFF;
-            color: #7D26CD;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
             margin: 0 auto;
             padding: 16px;
             display: flex;
@@ -31,7 +67,7 @@
 
         article {
             display: flex;
-            border: 1px solid #7D26CD;
+            border: 1px solid var(--cor-primaria);
             margin: 16px;
             gap: 16px;
             padding: 16px;
@@ -55,8 +91,34 @@
 
         .artigo-fonte {
             font-size: 0.85em;
-            color: #555555;
+            color: var(--cor-contraste);
             font-style: italic;
+        }
+
+        .artigo-fonte a {
+            color: var(--cor-primaria);
+            text-decoration: underline;
+        }
+
+        button {
+            border: 1px solid var(--cor-botao);
+            background-color: transparent;
+            color: var(--cor-botao);
+            border-radius: 4px;
+            padding: 6px 12px;
+            cursor: pointer;
+        }
+
+        .btn-tema-escuro {
+            position: fixed;
+            bottom: 16px;
+            right: 16px;
+            font-size: 32px;
+            padding: 12px;
+            background-color: var(--cor-primaria);
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -84,7 +146,7 @@
                 <h2>Maior Goleada do Brasil</h2>
                 <p class="artigo-autor">Por: Eduardo de Lima</p>
                 <p>O placar mais elástico registrado na história do futebol brasileiro aconteceu no Campeonato Carioca de 1909. O Botafogo venceu o Sport Club Mangueira por 24 a 0. Só o atacante Gilbert Hime marcou 9 gols nessa partida.</p>
-                <p class="artigo-fonte">Fonte: <a href:"https://www.lance.com.br/botafogo/maior-goleada-historia-futebol-brasileiro-faz-111-anos.html"target="_blank">Lance!</a></p>
+                <p class="artigo-fonte">Fonte: <a href="https://www.lance.com.br/botafogo/maior-goleada-historia-futebol-brasileiro-faz-111-anos.html" target="_blank">Lance!</a></p>
                 <button>💜 <span>0</span></button>
                 <button>👍 <span>0</span></button>
             </div>
@@ -98,7 +160,7 @@
                 <p>Em 1945, um jogo entre Arsenal e Hibernian foi disputado sob uma neblina tão densa que os jogadores mal conseguiam enxergar um passo à frente. 
                     <br><br>Relatos históricos apontam que um time colocou dois jogadores a mais em campo sem que o árbitro percebesse, e um jogador expulso continuou jogando.
                 </p>
-                <p class="artigo-fonte">Fonte: Sbnation.com/</p>
+                <p class="artigo-fonte">Fonte: <a href="https://www.sbnation.com/" target="_blank">Sbnation.com</a></p>
                 <button>💜 <span>0</span></button>
                 <button>👍 <span>0</span></button>
             </div>
@@ -112,7 +174,7 @@
                 <p>O termo veio do atacante argentino Bernardo Gandula, que jogava no Vasco da Gama nos anos 1930. 
                     <br><br>Como ele era reserva e ficava no banco, costumava buscar a bola quando ela saía do campo nos treinos; o apelido pegou para todos os pegadores de bola no Brasil.
                 </p>
-                <p class="artigo-fonte">Fonte: Lance!</p>
+                <p class="artigo-fonte">Fonte: <a href="https://www.lance.com.br/" target="_blank">Lance!</a></p>
                 <button>💜 <span>0</span></button>
                 <button>👍 <span>0</span></button>
             </div>
@@ -126,7 +188,7 @@
                 <p>No Rio de Janeiro dos anos 1930 e 1940, o cronista Coelho Neto observou que as mulheres que iam ao estádio usavam luvas por elegância e, de tanto calor e tensão no jogo, ficavam torcendo as luvas. 
                     <br><br>Daí surgiu o termo "torcedora" e "torcedor" (enquanto no resto do mundo usa-se "fã").
                 </p>
-                <p class="artigo-fonte">Fonte: Fluminense FC</p>
+                <p class="artigo-fonte">Fonte: <a href="https://www.fluminense.com.br/" target="_blank">Fluminense FC</a></p>
                 <button>💜 <span>0</span></button>
                 <button>👍 <span>0</span></button>
             </div>
@@ -140,21 +202,30 @@
                 <p>Já aconteceu de partidas oficiais terminarem com jogadores de linha improvisados como goleiros após expulsões ou lesões sem substituições. 
                     <br><br>Exemplos famosos incluem o lateral Kyle Walker (Manchester City, em 2019) e o atacante Olivier Giroud (Milan, em 2023), que até fez uma defesa milagrosa nos acréscimos.
                 </p>
-                <p class="artigo-fonte">Fonte: ESPN</p>
+                <p class="artigo-fonte">Fonte: <a href="https://www.espn.com.br/" target="_blank">ESPN</a></p>
                 <button>💜 <span>0</span></button>
                 <button>👍 <span>0</span></button>
             </div>
         </article>
+
+        <button class="btn-tema-escuro">🌙</button>
     </main>
 
     <script>
-        const botoes = document.querySelectorAll("button");
+        const botaoTema = document.querySelector(".btn-tema-escuro");
+
+        if (botaoTema) {
+            botaoTema.addEventListener("click", function() {
+                document.body.classList.toggle("tema-escuro");
+            });
+        }
+
+        const botoes = document.querySelectorAll("article button");
 
         botoes.forEach(function(botao) {
             let curtiu = false;
 
             botao.addEventListener("click", function() {
-                console.log("fui clicado");
                 let texto = botao.querySelector("span");
                 if (curtiu === false) {
                     texto.textContent = Number(texto.textContent) + 1;
@@ -165,6 +236,6 @@
                 }
             });
         });
-    </script src="script.js></script>
+    </script>
 </body>
 </html>
